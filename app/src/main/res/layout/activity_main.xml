@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="20dp"
+        android:background="@drawable/custom_corner_eight"
+        android:backgroundTint="@color/offwhite"
+        android:layout_marginHorizontal="8dp"
+        android:layout_centerVertical="true">
+        <TextView
+            android:id="@+id/tv_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:lineSpacingExtra="3dp"
+            android:textColor="@color/grey"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="12dp"
+            android:text="@string/download_youtube_instagram_twitter_videos"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tl_url_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginVertical="32dp"
+            android:layout_below="@+id/tv_heading"
+            app:hintTextColor="@color/grey"
+            android:outlineAmbientShadowColor="@color/blue"
+            android:hint="paste video link">
+
+            <EditText
+                android:id="@+id/et_link"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:maxLines="4"
+                android:textColor="@color/black"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_download"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:layout_below="@+id/tl_url_input"
+            android:background="@drawable/custom_corner_16"
+            android:text="Download"
+            android:layout_marginBottom="16dp"
+            android:textSize="16dp" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lv_loader"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            app:lottie_rawRes="@raw/loader"
+            android:layout_marginVertical="32dp"
+            android:layout_below="@+id/btn_download"
+            app:lottie_autoPlay="true"
+            android:visibility="gone"
+            app:lottie_loop="true"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_download_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="48dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="@string/made_by_divyansh_pratap_singh"
+        android:textColor="@color/grey"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        tools:ignore="TextSizeCheck" />
+
+</RelativeLayout>
